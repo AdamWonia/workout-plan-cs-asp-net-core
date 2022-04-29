@@ -9,5 +9,10 @@ namespace MyProject.Models
     {
         public int WorkoutSectionId { get; set; }
         public string WorkoutSectionName { get; set; }
+
+        public WorkoutSection()
+        {
+
+        }       
     }
 }
