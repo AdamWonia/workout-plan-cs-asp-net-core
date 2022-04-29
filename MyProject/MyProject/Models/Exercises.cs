@@ -11,5 +11,10 @@ namespace MyProject.Models
         public string ExerciseName { get; set; }
         public string ExerciseReps { get; set; }
         public int BreakTime { get; set; }
+
+        public Exercises()
+        {
+
+        }
     }
 }
