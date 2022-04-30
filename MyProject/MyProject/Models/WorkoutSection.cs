@@ -10,6 +10,10 @@ namespace MyProject.Models
         public int WorkoutSectionId { get; set; }
         public string WorkoutSectionName { get; set; }
 
+        public string ExerciseName { get; set; }
+        public string ExerciseReps { get; set; }
+        public int BreakTime { get; set; }
+
         public WorkoutSection()
         {
 
