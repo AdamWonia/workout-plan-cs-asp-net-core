@@ -20,9 +20,23 @@ namespace MyProject.Controllers
         }
 
         // GET: Exercises
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            return View(await _context.Exercises.ToListAsync());
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var exercises = await _context.Exercises
+                .FirstOrDefaultAsync(m => m.WorkoutSectionId == id);
+            if (exercises == null)
+            {
+                return NotFound();
+            }
+
+            return View(exercises);
+
+            //return View(await _context.Exercises.ToListAsync());
         }
 
         // GET: Exercises/Details/5

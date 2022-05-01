@@ -25,6 +25,7 @@ namespace MyProject.Controllers
             return View(await _context.WorkoutSection.ToListAsync());
         }
 
+        // I click details and it send me into list of exercises in specific section
         // GET: WorkoutSections/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -41,7 +42,7 @@ namespace MyProject.Controllers
             }
 
             //return View(workoutSection);
-            return RedirectToAction("Index", "Exercises");
+            return RedirectToAction("Index", "Exercises", new { @id = id });
         }
 
 
