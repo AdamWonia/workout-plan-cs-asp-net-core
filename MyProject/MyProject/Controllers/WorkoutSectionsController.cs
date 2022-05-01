@@ -40,8 +40,10 @@ namespace MyProject.Controllers
                 return NotFound();
             }
 
-            return View(workoutSection);
+            //return View(workoutSection);
+            return RedirectToAction("Index", "Exercises");
         }
+
 
         // GET: WorkoutSections/Create
         public IActionResult Create()
