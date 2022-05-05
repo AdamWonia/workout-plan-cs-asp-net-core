@@ -35,7 +35,6 @@ namespace MyProject.Controllers
             }
 
             return View(exercises);
-
             //return View(await _context.Exercises.ToListAsync());
         }
 
