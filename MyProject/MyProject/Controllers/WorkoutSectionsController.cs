@@ -41,8 +41,8 @@ namespace MyProject.Controllers
                 return NotFound();
             }
 
-            //return View(workoutSection);
-            return RedirectToAction("Index", "Exercises", new { @id = id });
+            return View(workoutSection);
+            //return RedirectToAction("Index", "Exercises", new { @id = id });
         }
 
 
