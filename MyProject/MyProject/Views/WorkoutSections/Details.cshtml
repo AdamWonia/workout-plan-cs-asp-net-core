@@ -1,23 +1,84 @@
 ﻿@model MyProject.Models.WorkoutSection
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Exercises list";
 }
 
-<h1>Details</h1>
+<h1>List of Exercises</h1>
 
 <div>
-    <h4>WorkoutSection</h4>
+    <h4>Exercises</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.WorkoutSectionName)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ExerciseName)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.WorkoutSectionName)
+    <!--
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ExerciseName)
         </dd>
+    -->
     </dl>
 </div>
+
+<!-- there is a create view, but it should be seen same as workout index
+    - so, there should be list of current exercises and also create new button above
+    - so, it I have to think and debug it, because there is a possibility to make it
+-->
+
+
+<div class="row">
+    <div class="col-md-4">
+        <!-- Add new elements to the List - test -->
+        <form action="AddContent" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <!-- This is visible in form -->
+                <!-- https://www.youtube.com/watch?v=fyT4BkWRUMU -->
+                <input type="text" name="Content_input" placeholder="Insert exercise" />
+                <!-- System.Collections.Generic.List`1[System.String] -->
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+
+            <!-- Tests for list of exercises -->
+            <tbody>
+                @foreach (var item in Model.Content)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item">Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@item">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <!--
+                <div class="form-group">
+                    <label asp-for="ExerciseReps" class="control-label"></label>
+                    <input asp-for="ExerciseReps" class="form-control" />
+                    <span asp-validation-for="ExerciseReps" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BreakTime" class="control-label"></label>
+                    <input asp-for="BreakTime" class="form-control" />
+                    <span asp-validation-for="BreakTime" class="text-danger"></span>
+                </div>
+            -->
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model.WorkoutSectionId">Edit</a> |
     <a asp-action="Index">Back to List</a>
