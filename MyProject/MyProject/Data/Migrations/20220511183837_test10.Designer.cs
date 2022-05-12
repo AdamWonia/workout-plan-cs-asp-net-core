@@ -10,8 +10,8 @@ using MyProject.Data;
 namespace MyProject.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220429195518_WorkoutPlanDB")]
-    partial class WorkoutPlanDB
+    [Migration("20220511183837_test10")]
+    partial class test10
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -221,12 +221,97 @@ namespace MyProject.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("MyProject.Models.Animal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FarmingId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ImpregnationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Sex")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FarmingId");
+
+                    b.ToTable("Animal");
+                });
+
+            modelBuilder.Entity("MyProject.Models.Farming", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Localization")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Farming");
+                });
+
+            modelBuilder.Entity("MyProject.Models.Worker", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("EmploymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("EndOfEmploymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("FarmingId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Salary")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FarmingId");
+
+                    b.ToTable("Worker");
+                });
+
             modelBuilder.Entity("MyProject.Models.WorkoutSection", b =>
                 {
                     b.Property<int>("WorkoutSectionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BreakTime")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ExerciseName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ExerciseReps")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WorkoutSectionName")
                         .HasColumnType("nvarchar(max)");
@@ -283,6 +368,24 @@ namespace MyProject.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MyProject.Models.Animal", b =>
+                {
+                    b.HasOne("MyProject.Models.Farming", "Farming")
+                        .WithMany("Animals")
+                        .HasForeignKey("FarmingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MyProject.Models.Worker", b =>
+                {
+                    b.HasOne("MyProject.Models.Farming", "Farming")
+                        .WithMany("Workers")
+                        .HasForeignKey("FarmingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
