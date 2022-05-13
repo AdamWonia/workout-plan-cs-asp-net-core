@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyProject.Models
 {
-    public class BackExercise
+    public class BackExercises
     {
         [Key]
         public int ExerciseId { get; set; }
@@ -14,5 +14,10 @@ namespace MyProject.Models
         public string ExerciseName { get; set; }
         public int Reps { get; set; }
         public int BreakTime { get; set; }
+
+        public BackExercises()
+        {
+
+        }
     }
 }
