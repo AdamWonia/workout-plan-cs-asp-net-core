@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -25,30 +26,37 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="BackExercises" asp-action="Index">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="ChestExercises" asp-action="Index">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="HandsExercises" asp-action="Index">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="LegsExercises" asp-action="Index">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="StomachExercises" asp-action="Index">Privacy</a>
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
+
+
+
+    <div class="element element-1">
+        <a class="nav-link text-dark" asp-area="" asp-controller="BackExercises" asp-action="Index">Back</a>
+    </div>
+    <div class="element element-2">
+        <a class="nav-link text-dark" asp-area="" asp-controller="ChestExercises" asp-action="Index">Chest</a>
+    </div>
+    <div class="element element-3">
+        <a class="nav-link text-dark" asp-area="" asp-controller="HandsExercises" asp-action="Index">Hands</a>
+    </div>
+    <div class="element element-4">
+        <a class="nav-link text-dark" asp-area="" asp-controller="LegsExercises" asp-action="Index">Legs</a>
+    </div>
+
+    <div class="element element-4">
+        <a class="nav-link text-dark" asp-area="" asp-controller="StomachExercises" asp-action="Index">Stomach</a>
     </div>
 
     <footer class="border-top footer text-muted">
@@ -56,6 +64,7 @@
             &copy; 2022 - MyProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
