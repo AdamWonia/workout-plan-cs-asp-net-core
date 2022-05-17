@@ -1,19 +1,22 @@
 ﻿@model IEnumerable<MyProject.Models.BackExercises>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Back Exercises";
 }
 
-<h1>Index</h1>
+<div>
+    <h1>Back Exercises</h1>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div>
+    <a asp-action="Create">Add New Exercise</a>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BackParty)
+                @Html.DisplayNameFor(model => model.BackPart)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ExerciseName)
@@ -31,7 +34,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.BackParty)
+                @Html.DisplayFor(modelItem => item.BackPart)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ExerciseName)
