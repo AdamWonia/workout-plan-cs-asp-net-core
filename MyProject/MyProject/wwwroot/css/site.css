@@ -22,7 +22,7 @@ a.navbar-brand {
 
 a {
     color: #d4cbb4;
-    text-decoration: none;
+    text-decoration: none !important;
     background-color: transparent;
     font-size: 23px;
 }
