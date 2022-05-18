@@ -20,7 +20,7 @@ namespace MyProject.Models
         [Display(Name = "Number of Repeats")]
         public int Reps { get; set; }
 
-        [Display(Name = "Break time")]
+        [Display(Name = "Break time [min]")]
         public int BreakTime { get; set; }
 
         public BackExercises()
