@@ -136,6 +136,25 @@ body {
 
 
 
+.body-part-text {
+    text-align: center;
+    font-size: 50px;
+    background: linear-gradient(to left, black, indigo, blue, blue, indigo, black);
+    -webkit-background-clip: text;
+    color: transparent;
+}
 
 
+div.static {
+    position: static;
+}
 
+.add-text {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.action-text {
+    font-size: 18px;
+    color: #000dff;
+}
