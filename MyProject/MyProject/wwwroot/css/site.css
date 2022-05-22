@@ -184,3 +184,16 @@ div.static {
     width: 400px;
     padding-bottom: 30px;
 }
+
+.btn-delete {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: #1a0dab;
+    text-decoration: underline;
+    cursor: pointer;
+}
