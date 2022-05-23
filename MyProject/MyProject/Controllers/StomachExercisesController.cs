@@ -54,7 +54,7 @@ namespace MyProject.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ExerciseId,StomachParty,ExerciseName,Reps,BreakTime")] StomachExercises stomachExercises)
+        public async Task<IActionResult> Create([Bind("ExerciseId,StomachPart,ExerciseName,Reps,BreakTime")] StomachExercises stomachExercises)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace MyProject.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ExerciseId,StomachParty,ExerciseName,Reps,BreakTime")] StomachExercises stomachExercises)
+        public async Task<IActionResult> Edit(int id, [Bind("ExerciseId,StomachPart,ExerciseName,Reps,BreakTime")] StomachExercises stomachExercises)
         {
             if (id != stomachExercises.ExerciseId)
             {
