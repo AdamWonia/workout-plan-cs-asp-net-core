@@ -1,19 +1,23 @@
 ﻿@model IEnumerable<MyProject.Models.LegsExercises>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Legs Exercises";
 }
 
-<h1>Index</h1>
+<div>
+    <div class="static">
+        <h1 class="body-part-text">Legs Exercises</h1>
+    </div>
+    <div class="static add-text">
+        <a asp-action="Create">Add New Exercise</a>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<table class="table" style="width: 80%; font-size: 18px;">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.LegParty)
+                @Html.DisplayNameFor(model => model.LegPart)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ExerciseName)
@@ -28,26 +32,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LegParty)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ExerciseName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Reps)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BreakTime)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ExerciseId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ExerciseId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ExerciseId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LegPart)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExerciseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reps)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BreakTime)
+                </td>
+                <td>
+                    <a class="action-text" asp-action="Edit" asp-route-id="@item.ExerciseId">Edit</a> |
+                    <a class="action-text" asp-action="Details" asp-route-id="@item.ExerciseId">Details</a> |
+                    <a class="action-text" asp-action="Delete" asp-route-id="@item.ExerciseId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
