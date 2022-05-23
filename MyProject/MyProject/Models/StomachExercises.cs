@@ -10,9 +10,17 @@ namespace MyProject.Models
     {
         [Key]
         public int ExerciseId { get; set; }
-        public string StomachParty { get; set; }
+
+        [Display(Name = "Part of Stomach")]
+        public string StomachPart { get; set; }
+
+        [Display(Name = "Exercise Name")]
         public string ExerciseName { get; set; }
+
+        [Display(Name = "Number of Repeats")]
         public int Reps { get; set; }
+
+        [Display(Name = "Break Time [min]")]
         public int BreakTime { get; set; }
 
         public StomachExercises()
