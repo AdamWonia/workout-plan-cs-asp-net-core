@@ -1,42 +1,38 @@
 ﻿@model MyProject.Models.HandsExercises
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Exercise Details";
 }
 
-<h1>Details</h1>
+<div>
+    <div class="static">
+        <h1 class="body-part-text details-top">Exercise Details</h1>
+    </div>
 
-<div>
-    <h4>HandsExercises</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HandParty)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HandParty)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ExerciseName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ExerciseName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Reps)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Reps)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BreakTime)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BreakTime)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.ExerciseId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <table class="details-table">
+        <tbody>
+            <tr>
+                <td class="td-left">@Html.DisplayNameFor(model => model.HandPart):</td>
+                <td class="td-right">@Html.DisplayFor(model => model.HandPart)</td>
+            </tr>
+            <tr>
+                <td class="td-left">@Html.DisplayNameFor(model => model.ExerciseName):</td>
+                <td class="td-right">@Html.DisplayFor(model => model.ExerciseName)</td>
+            </tr>
+            <tr>
+                <td class="td-left">@Html.DisplayNameFor(model => model.Reps):</td>
+                <td class="td-right">@Html.DisplayFor(model => model.Reps)</td>
+            </tr>
+            <tr>
+                <td class="td-left">@Html.DisplayNameFor(model => model.BreakTime):</td>
+                <td class="td-right">@Html.DisplayFor(model => model.BreakTime)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="details-action">
+        <a asp-action="Edit" asp-route-id="@Model.ExerciseId" style="font-size: 20px;">Edit</a> |
+        <a asp-action="Index" style="font-size: 20px;">Back to List</a>
+    </div>
 </div>
