@@ -32,7 +32,10 @@
     </table>
 
     <div class="details-action">
-        <a asp-action="Edit" asp-route-id="@Model.ExerciseId" style="font-size: 20px;">Edit</a> |
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a asp-action="Edit" asp-route-id="@Model.ExerciseId" style="font-size: 20px;">Edit</a>
+        }
         <a asp-action="Index" style="font-size: 20px;">Back to List</a>
     </div>
 </div>
