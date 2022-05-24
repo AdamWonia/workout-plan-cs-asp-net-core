@@ -8,9 +8,12 @@
     <div class="static">
         <h1 class="body-part-text">Stomach Exercises</h1>
     </div>
-    <div class="static add-text">
-        <a asp-action="Create">Add New Exercise</a>
-    </div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="static add-text">
+            <a asp-action="Create">Add New Exercise</a>
+        </div>
+    }
 </div>
 
 <table class="table" style="width: 80%; font-size: 18px;">
@@ -48,9 +51,15 @@
                     @Html.DisplayFor(modelItem => item.BreakTime)
                 </td>
                 <td>
-                    <a class="action-text" asp-action="Edit" asp-route-id="@item.ExerciseId">Edit</a> |
-                    <a class="action-text" asp-action="Details" asp-route-id="@item.ExerciseId">Details</a> |
-                    <a class="action-text" asp-action="Delete" asp-route-id="@item.ExerciseId">Delete</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="action-text" asp-action="Edit" asp-route-id="@item.ExerciseId">Edit</a>
+                    }
+                    <a class="action-text" asp-action="Details" asp-route-id="@item.ExerciseId">Details</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="action-text" asp-action="Delete" asp-route-id="@item.ExerciseId">Delete</a>
+                    }
                 </td>
             </tr>
         }
