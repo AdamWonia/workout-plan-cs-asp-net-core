@@ -27,7 +27,6 @@ namespace MyProject.Controllers
         }
 
         // GET: HandsExercises/Details/5
-        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
