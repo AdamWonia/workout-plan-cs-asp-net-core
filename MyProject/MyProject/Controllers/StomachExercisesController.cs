@@ -44,6 +44,7 @@ namespace MyProject.Controllers
         }
 
         // GET: StomachExercises/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -52,6 +53,7 @@ namespace MyProject.Controllers
         // POST: StomachExercises/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ExerciseId,StomachPart,ExerciseName,Reps,BreakTime")] StomachExercises stomachExercises)
@@ -66,6 +68,7 @@ namespace MyProject.Controllers
         }
 
         // GET: StomachExercises/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,6 +87,7 @@ namespace MyProject.Controllers
         // POST: StomachExercises/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ExerciseId,StomachPart,ExerciseName,Reps,BreakTime")] StomachExercises stomachExercises)
@@ -117,6 +121,7 @@ namespace MyProject.Controllers
         }
 
         // GET: StomachExercises/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,6 +140,7 @@ namespace MyProject.Controllers
         }
 
         // POST: StomachExercises/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
