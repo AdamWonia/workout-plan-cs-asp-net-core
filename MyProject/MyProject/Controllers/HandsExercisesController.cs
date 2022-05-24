@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,7 @@ namespace MyProject.Controllers
         }
 
         // GET: HandsExercises/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +46,7 @@ namespace MyProject.Controllers
         }
 
         // GET: HandsExercises/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -52,6 +55,7 @@ namespace MyProject.Controllers
         // POST: HandsExercises/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ExerciseId,HandPart,ExerciseName,Reps,BreakTime")] HandsExercises handsExercises)
@@ -66,6 +70,7 @@ namespace MyProject.Controllers
         }
 
         // GET: HandsExercises/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,6 +89,7 @@ namespace MyProject.Controllers
         // POST: HandsExercises/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ExerciseId,HandPart,ExerciseName,Reps,BreakTime")] HandsExercises handsExercises)
@@ -117,6 +123,7 @@ namespace MyProject.Controllers
         }
 
         // GET: HandsExercises/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -135,6 +142,7 @@ namespace MyProject.Controllers
         }
 
         // POST: HandsExercises/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
