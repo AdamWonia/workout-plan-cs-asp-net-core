@@ -13,7 +13,7 @@ namespace MyProject.Data.Migrations
                 {
                     ExerciseId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    BackParty = table.Column<string>(nullable: true),
+                    BackPart = table.Column<string>(nullable: true),
                     ExerciseName = table.Column<string>(nullable: true),
                     Reps = table.Column<int>(nullable: false),
                     BreakTime = table.Column<int>(nullable: false)
@@ -29,7 +29,7 @@ namespace MyProject.Data.Migrations
                 {
                     ExerciseId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ChestParty = table.Column<string>(nullable: true),
+                    ChestPart = table.Column<string>(nullable: true),
                     ExerciseName = table.Column<string>(nullable: true),
                     Reps = table.Column<int>(nullable: false),
                     BreakTime = table.Column<int>(nullable: false)
@@ -45,7 +45,7 @@ namespace MyProject.Data.Migrations
                 {
                     ExerciseId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    HandParty = table.Column<string>(nullable: true),
+                    HandPart = table.Column<string>(nullable: true),
                     ExerciseName = table.Column<string>(nullable: true),
                     Reps = table.Column<int>(nullable: false),
                     BreakTime = table.Column<int>(nullable: false)
@@ -61,7 +61,7 @@ namespace MyProject.Data.Migrations
                 {
                     ExerciseId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    LegParty = table.Column<string>(nullable: true),
+                    LegPart = table.Column<string>(nullable: true),
                     ExerciseName = table.Column<string>(nullable: true),
                     Reps = table.Column<int>(nullable: false),
                     BreakTime = table.Column<int>(nullable: false)
@@ -77,7 +77,7 @@ namespace MyProject.Data.Migrations
                 {
                     ExerciseId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StomachParty = table.Column<string>(nullable: true),
+                    StomachPart = table.Column<string>(nullable: true),
                     ExerciseName = table.Column<string>(nullable: true),
                     Reps = table.Column<int>(nullable: false),
                     BreakTime = table.Column<int>(nullable: false)

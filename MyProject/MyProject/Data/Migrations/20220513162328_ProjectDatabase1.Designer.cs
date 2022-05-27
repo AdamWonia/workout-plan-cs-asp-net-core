@@ -228,7 +228,7 @@ namespace MyProject.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BackParty")
+                    b.Property<string>("BackPart")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("BreakTime")
@@ -255,7 +255,7 @@ namespace MyProject.Data.Migrations
                     b.Property<int>("BreakTime")
                         .HasColumnType("int");
 
-                    b.Property<string>("ChestParty")
+                    b.Property<string>("ChestPart")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ExerciseName")
@@ -282,7 +282,7 @@ namespace MyProject.Data.Migrations
                     b.Property<string>("ExerciseName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HandParty")
+                    b.Property<string>("HandPart")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Reps")
@@ -306,7 +306,7 @@ namespace MyProject.Data.Migrations
                     b.Property<string>("ExerciseName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LegParty")
+                    b.Property<string>("LegPart")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Reps")
@@ -333,7 +333,7 @@ namespace MyProject.Data.Migrations
                     b.Property<int>("Reps")
                         .HasColumnType("int");
 
-                    b.Property<string>("StomachParty")
+                    b.Property<string>("StomachPart")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ExerciseId");

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\_Template for C# ASP.NET MVC\\MyProject\\MyProject\\MyProject.csproj": {}
+    "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\projekt 5 - workout plan\\MyProject\\MyProject\\MyProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\_Template for C# ASP.NET MVC\\MyProject\\MyProject\\MyProject.csproj": {
+    "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\projekt 5 - workout plan\\MyProject\\MyProject\\MyProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\_Template for C# ASP.NET MVC\\MyProject\\MyProject\\MyProject.csproj",
+        "projectUniqueName": "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\projekt 5 - workout plan\\MyProject\\MyProject\\MyProject.csproj",
         "projectName": "MyProject",
-        "projectPath": "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\_Template for C# ASP.NET MVC\\MyProject\\MyProject\\MyProject.csproj",
+        "projectPath": "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\projekt 5 - workout plan\\MyProject\\MyProject\\MyProject.csproj",
         "packagesPath": "C:\\Users\\ja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\_Template for C# ASP.NET MVC\\MyProject\\MyProject\\obj\\",
+        "outputPath": "C:\\Users\\ja\\Desktop\\Programowanie\\C#\\projekt 5 - workout plan\\MyProject\\MyProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -45,23 +45,35 @@
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.7, )"
+              "version": "[3.1.25, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[3.1.7, )"
+              "version": "[3.1.25, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[3.1.7, )"
+              "version": "[3.1.25, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.25, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.7, )"
+              "version": "[3.1.25, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.7, )"
+              "version": "[3.1.25, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [
