@@ -12,7 +12,23 @@ The user has also the possibility to register a new account. This requires an e-
 
 ## MVC
 
-- TO DO
+The project uses the MVC architecture pattern. This means that the application is divided into three independent components:
+
+- Model - responsible for data management
+- View - front-end of the application
+- Controller - the link between the View and the Model, responsible for retrieving, modifying and sharing data with the user.
+
+The MVC pattern allows to separate the backend from the frontend of the application. It is also easier to make changes to each component without having to make changes to the other components.
+
+The project contains five main models, which are:
+
+- BackExercises
+- ChestExercises
+- HandsExercises
+- LegsExercises
+- StomachExercises
+
+They contain all data describing each exercise. Models are linked to corresponding controllers for their modification. Each model has a corresponding view (Views) that allows the user to create, edit, delete and view the details of each model.
 
 ## Launch
 
