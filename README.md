@@ -1,6 +1,6 @@
 # Workout Plan - ASP .NET Core Web Application
 
-## Description
+## Description 
 
 This repository contains a Workout Plan project made in C# using the ASP .NET Core Framework. This project was made using ASP .NET Core Web Application and the MVC (Model-View-Controller) template.
 
